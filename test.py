@@ -1,16 +1,15 @@
-from a import A
-import os
-# from blog.a import A
-# def test_write():
-# 	test = PostList();
-# 	assert test.getTemplateName() == 'category.html' 
-# def test_read():
-# 	test = PostDetail();
-# 	assert test.getList() == 'detail.html'
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pylog.settings")
-def test_list():
-	aa = A()
-	assert 0
+from time import sleep
+from django.test import TestCase
+from blog.views import PostDetail, PostList, PostCreate
 
-	
-	#!/usr/bin/env python
+class Test(TestCase):
+    def test_1(self):  # read
+		detail = PostDetail()
+		#assert(False)
+    def test_2(self):  # write
+		list = PostList()
+        # self.test_1()
+    def test_3(self):
+		create = PostCreate()	
+		# assert 0
+        # self.test_1()

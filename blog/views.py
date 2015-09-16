@@ -24,8 +24,8 @@ class PostList(ListView):
 class PostDetail(DetailView):
     model = Post
     template_name = 'detail.html'
-    # def getDetailTemplateName(self):
-    #     return template_name
+    def getDetailName(self):
+		return self.template_name
 
 
 class PostCreate(CreateView):
