@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="{% url 'create' %}">글쓰기</a>
+    <ul class="category">
+        {% for category in categories %}
+            <li>
+                <a href="{% url 'home' %}?category={{ category.id }}">
+                    {{ category.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="posts">
+        {% for object in object_list %}
+            {% include '_post.html' %}
+            <hr/>
+        {% endfor %}
+    </div>
+{% endblock %}
+
