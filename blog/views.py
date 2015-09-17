@@ -25,12 +25,13 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'detail.html'
     def getDetailName(self):
-		return self.template_name
+        return self.template_name
 
 
 class PostCreate(CreateView):
     model = Post
     template_name = 'create.html'
+    fields = ['title', 'content']
     # def getCreateTemplateName(self):
     #     return template_name
 
