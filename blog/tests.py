@@ -2,12 +2,15 @@
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 from blog.models import Post
-
+import urllib.request
 
 class TestPostModel(TestCase):
     def _create_post(self):
-        Post.objects.create(title=u'테스트',
-                            content=u'내용')
+        Post.objects.create(title=u'테스트', content=u'내용')
+
+    def test_check_url(self):
+        res = urllib.request.urlopen('http://www.google.com').getcode()
+        assert(res == 200, res)
 
     def test_create_post_model(self):
         self._create_post()
